@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input {
+  cursor: pointer;
+}
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
+}
+
+body {
+  background-image: url(./images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.app {
+  width: 960px;
+  max-width: 100%;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.365);
+  box-shadow: 5px 5px 10px 5px rgba(48, 48, 48, 0.58);
+  border-radius: 10px;
+}
+.greeting {
+  padding-bottom: 30px;
+}
+.greeting input {
+  border: none;
+  font-size: 20px;
+  background: transparent;
+  color: #e8adaa;
+}
+.greeting input:focus {
+  outline: none;
+}
+.todo-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.create-todo,
+.todo-list {
+  flex: 1 1 200px;
+}
+.create-todo {
+  padding-right: 100px;
+}
+.create-todo h3 {
+  color: #e8adaa;
+  margin-bottom: 15px;
+}
+.add-todo {
+  width: 100%;
+  background: #fee6e63c;
+  padding: 6px 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  border: none;
+}
+.options {
+  display: flex;
+  margin-bottom: 30px;
+}
+.options div {
+  padding-top: 10px;
+}
+.options label {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #fee6e63c;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-top: 5px;
+}
+.options label:first-child {
+  margin-right: 10px;
+}
+
+.bubble {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.bubble::after {
+  content: '';
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+input:checked ~ .bubble::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+.business {
+  border: 2px solid #97cec7;
+  box-shadow: 0px 0px 5px #97cec7;
+}
+.business::after {
+  background-color: #97cec7;
+  box-shadow: 0px 0px 5px #97cec7;
+}
+
+.personal {
+  border: 2px solid #e99698;
+  box-shadow: 0px 0px 5px #e99697ba;
+}
+.personal::after {
+  background-color: #e99698;
+  box-shadow: 0px 0px 5px #e99697ba;
+}
+
+.btn {
+  background: #d54e559c;
+  color: white;
+  padding: 10px 0px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  transition: 0.2s ease-in-out;
+  background: #d54e54;
+}
+.todo-list h3 {
+  color: #e8adaa;
+  margin-bottom: 15px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #fee6e63c;
+  width: 70%;
+  border-radius: 10px;
+  margin: 5px 0px;
+}
+.todo-item input {
+  background: none;
+  border: none;
+  padding: 0px 10px;
+}
+.todo-item input:focus {
+  outline: none;
+}
+.delete {
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #d54e559c;
+  color: white;
+  transition: 0.2s ease-in-out;
+  padding: 10px 15px;
+}
+.delete:hover {
+  transition: 0.2s ease-in-out;
+  background: #d54e54;
+}
+.todo-item.done .todo-content input {
+  text-decoration: line-through;
+  color: rgb(88, 88, 88);
+}
