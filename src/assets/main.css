@@ -11,7 +11,7 @@ input[type='checkbox'] {
   display: none;
 }
 
-body {
+#app {
   background-image: url(./images/background.jpg);
   background-position: center;
   background-size: cover;
@@ -19,10 +19,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 15px;
+  padding: 15px;
 }
 
-.app {
+.wrapper {
   width: 960px;
   max-width: 100%;
   padding: 50px;
@@ -51,7 +51,7 @@ body {
   flex: 1 1 200px;
 }
 .create-todo {
-  padding-right: 100px;
+  margin-right: 50px;
 }
 .create-todo h3 {
   color: #e8adaa;
@@ -149,9 +149,10 @@ input:checked ~ .bubble::after {
 .todo-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
   background: #fee6e63c;
-  width: 70%;
+  width: 100%;
   border-radius: 10px;
   margin: 5px 0px;
 }
@@ -179,4 +180,20 @@ input:checked ~ .bubble::after {
 .todo-item.done .todo-content input {
   text-decoration: line-through;
   color: rgb(88, 88, 88);
+}
+
+@media (max-width: 767px) {
+  .create-todo,
+  .todo-list {
+    flex: 1 1 100%;
+  }
+  .wrapper {
+    padding: 30px;
+  }
+  .create-todo {
+    margin-right: 0;
+  }
+  .todo-list {
+    margin-top: 30px;
+  }
 }
